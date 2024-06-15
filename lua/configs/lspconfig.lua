@@ -32,7 +32,7 @@ lspconfig.gopls.setup {
   },
 }
 
-lspconfig.rust-analyzer.setup({
+lspconfig.rust_analyzer.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "rust" },
