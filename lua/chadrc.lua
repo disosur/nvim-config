@@ -6,11 +6,11 @@ local M = {}
 
 M.ui = {
 	theme = "tokyonight",
-  transparency = true
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
+  transparency = true,
+   hl_override = {
+    Comment = { italic = true },
+    ["@comment"] = { italic = true },
+  },
 }
 
 return M
