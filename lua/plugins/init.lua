@@ -15,7 +15,7 @@ return {
   },
   {
     "windwp/nvim-ts-autotag",
-    ft = {"javascript", "javascriptreact", "typescript", "typescriptreact", "svelte"},
+    ft = {"javascript", "javascriptreact", "typescript", "typescriptreact", "svelte", "templ"},
     config = function()
       require("nvim-ts-autotag").setup()
     end,
@@ -41,6 +41,7 @@ return {
         "zls",
         "gofumpt",
         "goimports-reviser",
+        "htmx-lsp"
       },
     },
   },
@@ -70,7 +71,8 @@ return {
         "javascript",
         "typescript",
         "tsx",
-        "svelte"
+        "svelte",
+        "templ"
       },
     },
   },
