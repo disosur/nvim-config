@@ -38,7 +38,6 @@ return {
         "prettierd",
         "typescript-language-server",
         "svelte-language-server",
-        "zls",
         "gofumpt",
         "goimports-reviser",
         "htmx-lsp"
@@ -75,5 +74,46 @@ return {
         "templ"
       },
     },
+  },
+  {
+    "akinsho/flutter-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "stevearc/dressing.nvim" },
+    config = function()
+      require('flutter-tools').setup {
+        ui = {
+          border = "rounded",
+          notification_style = 'plugin'
+        },
+      decorations = {
+        statusline = {
+        app_version = false,
+        device = false,
+        project_config = false,
+        }
+      },
+      flutter_lookup_cmd = nil,
+      flutter_path = "/home/disosur/fvm/versions/stable/bin/",
+      root_patterns = { ".git", "pubspec.yaml" },
+      fvm = true,
+      widget_guides = {
+        enabled = true,
+      },
+      settings = {
+        showTodos = true,
+        completeFunctionCalls = true,
+        renameFilesWithClasses = "prompt", -- "always"
+        enableSnippets = true,
+        updateImportsOnRename = true, -- Whether to update imports and other directives when files are renamed. Required for `FlutterRename` command.
+      },
+      closing_tags = {
+        highlight = "ErrorMsg", -- highlight for the closing tag
+        prefix = ">", -- character to use for close tag e.g. > Widget
+        enabled = true -- set to false to disable
+      },
+    }
+    end
+  },
+  {
+    "dart-lang/dart-vim-plugin"
   },
 }

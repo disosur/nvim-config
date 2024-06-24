@@ -3,8 +3,9 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "tsserver", "tailwindcss", "eslint", "clangd", "zls" }
 local util = require "lspconfig/util"
+
+local servers = { "html", "cssls", "tsserver", "tailwindcss", "eslint", "clangd" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -45,3 +46,28 @@ lspconfig.rust_analyzer.setup({
     }
   }
 })
+
+-- Dart language server setup
+lspconfig.dartls.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  cmd = { "dart", "language-server", "--protocol=lsp" },
+  filetypes = { "dart" },
+  root_dir = util.root_pattern("pubspec.yaml"),
+  init_options = {
+    closingLabels = true,
+    flutterOutline = true,
+    onlyAnalyzeProjectsWithOpenFiles = true,
+    outline = true,
+    suggestFromUnimportedLibraries = true,
+  },
+  settings = {
+    dart = {
+      completeFunctionCalls = true,
+      showTodos = true,
+      enableSdkFormatter = true,
+    },
+  },
+}
+

@@ -11,6 +11,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+vim.env.PATH = vim.env.PATH .. ':/home/disosur/fvm/versions/stable/bin/cache/dart-sdk/bin'
 local lazy_config = require "configs.lazy"
 
 -- load plugins
