@@ -29,7 +29,6 @@ return {
         "gopls",
         "tailwindcss-language-server",
         "rustywind",
-        "rust-analyzer",
         "clangd",
         "clang-format",
         "eslint-lsp",
@@ -40,7 +39,6 @@ return {
         "svelte-language-server",
         "gofumpt",
         "goimports-reviser",
-        "htmx-lsp"
       },
     },
   },
@@ -50,13 +48,6 @@ return {
     opts = function()
       return require "configs.null-ls"
     end,
-  },
-  {
-    "rust-lang/rust.vim",
-    ft = "rust",
-    init = function()
-      vim.g.rustfmt_autosave = 1
-    end
   },
   {
     "nvim-treesitter/nvim-treesitter",
