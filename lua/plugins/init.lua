@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     config = function()
       require "configs.conform"
     end,
@@ -15,7 +15,7 @@ return {
   },
   {
     "windwp/nvim-ts-autotag",
-    ft = {"javascript", "javascriptreact", "typescript", "typescriptreact", "svelte", "templ"},
+    ft = { "javascript", "javascriptreact", "typescript", "typescriptreact", "svelte", "templ" },
     config = function()
       require("nvim-ts-autotag").setup()
     end,
@@ -29,8 +29,6 @@ return {
         "gopls",
         "tailwindcss-language-server",
         "rustywind",
-        "clangd",
-        "clang-format",
         "eslint-lsp",
         "html-lsp",
         "css-lsp",
@@ -39,6 +37,10 @@ return {
         "svelte-language-server",
         "gofumpt",
         "goimports-reviser",
+        "golines",
+        "angular-language-server",
+        "vue-language-server",
+        "bash-language-server",
       },
     },
   },
@@ -61,8 +63,11 @@ return {
         "javascript",
         "typescript",
         "tsx",
+        "dart",
         "svelte",
-        "templ"
+        "templ",
+        "vue",
+        "astro",
       },
     },
   },
@@ -70,41 +75,41 @@ return {
     "akinsho/flutter-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "stevearc/dressing.nvim" },
     config = function()
-      require('flutter-tools').setup {
+      require("flutter-tools").setup {
         ui = {
           border = "rounded",
-          notification_style = 'plugin'
+          notification_style = "plugin",
         },
-      decorations = {
-        statusline = {
-        app_version = false,
-        device = false,
-        project_config = false,
-        }
-      },
-      flutter_lookup_cmd = nil,
-      flutter_path = "/home/disosur/fvm/versions/stable/bin/",
-      root_patterns = { ".git", "pubspec.yaml" },
-      fvm = true,
-      widget_guides = {
-        enabled = true,
-      },
-      settings = {
-        showTodos = true,
-        completeFunctionCalls = true,
-        renameFilesWithClasses = "prompt", -- "always"
-        enableSnippets = true,
-        updateImportsOnRename = true, -- Whether to update imports and other directives when files are renamed. Required for `FlutterRename` command.
-      },
-      closing_tags = {
-        highlight = "ErrorMsg", -- highlight for the closing tag
-        prefix = ">", -- character to use for close tag e.g. > Widget
-        enabled = true -- set to false to disable
-      },
-    }
-    end
+        decorations = {
+          statusline = {
+            app_version = false,
+            device = false,
+            project_config = false,
+          },
+        },
+        flutter_lookup_cmd = nil,
+        flutter_path = "/home/disosur/fvm/versions/stable/bin/",
+        root_patterns = { ".git", "pubspec.yaml" },
+        fvm = true,
+        widget_guides = {
+          enabled = true,
+        },
+        settings = {
+          showTodos = true,
+          completeFunctionCalls = true,
+          renameFilesWithClasses = "prompt", -- "always"
+          enableSnippets = true,
+          updateImportsOnRename = true, -- Whether to update imports and other directives when files are renamed. Required for `FlutterRename` command.
+        },
+        closing_tags = {
+          highlight = "ErrorMsg", -- highlight for the closing tag
+          prefix = ">", -- character to use for close tag e.g. > Widget
+          enabled = true, -- set to false to disable
+        },
+      }
+    end,
   },
   {
-    "dart-lang/dart-vim-plugin"
+    "dart-lang/dart-vim-plugin",
   },
 }
