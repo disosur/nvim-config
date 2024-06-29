@@ -1,10 +1,10 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = "BufWritePre", -- uncomment for format on save
-    config = function()
-      require "configs.conform"
-    end,
+    -- event = "BufWritePre", -- uncomment for format on save
+    -- config = function()
+    --   require "configs.conform"
+    -- end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -99,17 +99,21 @@ return {
           completeFunctionCalls = true,
           renameFilesWithClasses = "prompt", -- "always"
           enableSnippets = true,
-          updateImportsOnRename = true, -- Whether to update imports and other directives when files are renamed. Required for `FlutterRename` command.
+          updateImportsOnRename = true,      -- Whether to update imports and other directives when files are renamed. Required for `FlutterRename` command.
         },
         closing_tags = {
           highlight = "ErrorMsg", -- highlight for the closing tag
-          prefix = ">", -- character to use for close tag e.g. > Widget
-          enabled = true, -- set to false to disable
+          prefix = ">",           -- character to use for close tag e.g. > Widget
+          enabled = true,         -- set to false to disable
         },
       }
     end,
   },
   {
     "dart-lang/dart-vim-plugin",
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
   },
 }
