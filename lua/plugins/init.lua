@@ -1,10 +1,10 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = "BufWritePre", -- uncomment for format on save
-    -- config = function()
-    --   require "configs.conform"
-    -- end,
+    event = "BufWritePre", -- uncomment for format on save
+    config = function()
+      require "configs.conform"
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -85,9 +85,9 @@ return {
         },
         decorations = {
           statusline = {
-            app_version = false,
-            device = false,
-            project_config = false,
+            app_version = true,
+            device = true,
+            project_config = true,
           },
         },
         flutter_lookup_cmd = nil,
@@ -96,6 +96,19 @@ return {
         fvm = true,
         widget_guides = {
           enabled = true,
+        },
+        dev_log = {
+          enabled = true,
+          notify_errors = true, -- if there is an error whilst running then notify the user
+          open_cmd = "tabedit", -- command to use to open the log buffer
+        },
+        dev_tools = {
+          autostart = true,          -- autostart devtools server if not detected
+          auto_open_browser = false, -- Automatically opens devtools in the browser
+        },
+        outline = {
+          open_cmd = "30vnew", -- command to use to open the outline buffer
+          auto_open = true,    -- if true this will open the outline automatically when it is first populated
         },
         settings = {
           showTodos = true,
@@ -114,6 +127,12 @@ return {
   },
   {
     "dart-lang/dart-vim-plugin",
+  },
+  {
+    "mefercs/flutter-snippets-for-neovim",
+  },
+  {
+    "nvim-lua/plenary.nvim",
   },
   {
     "folke/todo-comments.nvim",
