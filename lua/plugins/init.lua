@@ -43,7 +43,6 @@ return {
         "golines",
         "angular-language-server",
         "vue-language-server",
-        "bash-language-server",
         "clangd",
         "clang-format",
       },
@@ -60,9 +59,6 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
-        "vim",
-        "lua",
-        "vimdoc",
         "html",
         "css",
         "javascript",
@@ -78,54 +74,12 @@ return {
   },
   {
     "akinsho/flutter-tools.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "stevearc/dressing.nvim" },
-    config = function()
-      require("flutter-tools").setup {
-        ui = {
-          border = "rounded",
-          notification_style = "plugin",
-        },
-        decorations = {
-          statusline = {
-            app_version = true,
-            device = true,
-            project_config = true,
-          },
-        },
-        flutter_lookup_cmd = nil,
-        flutter_path = "/home/disosur/fvm/versions/stable/bin/",
-        root_patterns = { ".git", "pubspec.yaml" },
-        fvm = true,
-        widget_guides = {
-          enabled = true,
-        },
-        dev_log = {
-          enabled = true,
-          notify_errors = true, -- if there is an error whilst running then notify the user
-          open_cmd = "tabedit", -- command to use to open the log buffer
-        },
-        dev_tools = {
-          autostart = true,          -- autostart devtools server if not detected
-          auto_open_browser = false, -- Automatically opens devtools in the browser
-        },
-        outline = {
-          open_cmd = "30vnew", -- command to use to open the outline buffer
-          auto_open = true,    -- if true this will open the outline automatically when it is first populated
-        },
-        settings = {
-          showTodos = true,
-          completeFunctionCalls = true,
-          renameFilesWithClasses = "prompt", -- "always"
-          enableSnippets = true,
-          updateImportsOnRename = true,      -- Whether to update imports and other directives when files are renamed. Required for `FlutterRename` command.
-        },
-        closing_tags = {
-          highlight = "ErrorMsg", -- highlight for the closing tag
-          prefix = ">",           -- character to use for close tag e.g. > Widget
-          enabled = true,         -- set to false to disable
-        },
-      }
-    end,
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim", -- optional for vim.ui.select
+    },
+    config = true,
   },
   {
     "dart-lang/dart-vim-plugin",
