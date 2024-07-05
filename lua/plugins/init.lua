@@ -44,6 +44,8 @@ return {
         "angular-language-server",
         "vue-language-server",
         "bash-language-server",
+        "clangd",
+        "clang-format",
       },
     },
   },
