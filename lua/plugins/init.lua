@@ -1,5 +1,12 @@
 return {
   {
+    "stevearc/conform.nvim",
+    event = "BufWritePre", -- uncomment for format on save
+    config = function()
+      require "configs.conform"
+    end,
+  },
+  {
     "neovim/nvim-lspconfig",
     config = function()
       require("nvchad.configs.lspconfig").defaults()
@@ -14,10 +21,10 @@ return {
     end,
   },
   {
-    'saecki/crates.nvim',
+    "saecki/crates.nvim",
     ft = { "rust", "toml" },
     config = function(_, opts)
-      local crates = require('crates')
+      local crates = require "crates"
       crates.setup(opts)
       crates.show()
     end,
@@ -44,6 +51,7 @@ return {
         "clangd",
         "clang-format",
         "templ",
+        "zls",
       },
     },
   },
@@ -63,6 +71,8 @@ return {
         "tsx",
         "svelte",
         "templ",
+        "rust",
+        "zig",
       },
     },
   },

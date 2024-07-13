@@ -6,7 +6,7 @@ local M = {}
 
 M.ui = {
   theme = "material-darker",
-  transparency = false,
+  transparency = true,
 }
 
 return M

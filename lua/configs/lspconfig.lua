@@ -16,9 +16,9 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.rust_analyzer.setup({})
+lspconfig.rust_analyzer.setup {}
 
-lspconfig.gopls.setup({
+lspconfig.gopls.setup {
   filetypes = { "go", "gomod", "gowork", "gotmpl" },
   settings = {
     env = {
@@ -28,9 +28,9 @@ lspconfig.gopls.setup({
       gofumpt = true,
     },
   },
-})
+}
 
-require('lspconfig').tailwindcss.setup({
+require("lspconfig").tailwindcss.setup {
   settings = {
     includeLanguages = {
       templ = "html",
@@ -38,4 +38,4 @@ require('lspconfig').tailwindcss.setup({
       ["typescriptreact"] = "typescript",
     },
   },
-})
+}
