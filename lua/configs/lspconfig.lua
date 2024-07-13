@@ -32,27 +32,3 @@ lspconfig.gopls.setup {
     },
   },
 }
-
--- Dart language server setup
-lspconfig.dartls.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-  cmd = { "dart", "language-server", "--protocol=lsp" },
-  filetypes = { "dart" },
-  root_dir = util.root_pattern "pubspec.yaml",
-  init_options = {
-    closingLabels = true,
-    flutterOutline = true,
-    onlyAnalyzeProjectsWithOpenFiles = true,
-    outline = true,
-    suggestFromUnimportedLibraries = true,
-  },
-  settings = {
-    dart = {
-      completeFunctionCalls = true,
-      showTodos = true,
-      enableSdkFormatter = true,
-    },
-  },
-}

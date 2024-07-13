@@ -1,12 +1,5 @@
 return {
   {
-    "stevearc/conform.nvim",
-    event = "BufWritePre", -- uncomment for format on save
-    config = function()
-      require "configs.conform"
-    end,
-  },
-  {
     "neovim/nvim-lspconfig",
     config = function()
       require("nvchad.configs.lspconfig").defaults()
@@ -32,9 +25,8 @@ return {
         "gopls",
         "tailwindcss-language-server",
         "rustywind",
+        "bash-language-server",
         "eslint-lsp",
-        "html-lsp",
-        "css-lsp",
         "prettierd",
         "typescript-language-server",
         "svelte-language-server",
@@ -70,24 +62,6 @@ return {
         "astro",
       },
     },
-  },
-  {
-    "akinsho/flutter-tools.nvim",
-    lazy = false,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "stevearc/dressing.nvim", -- optional for vim.ui.select
-    },
-    config = true,
-  },
-  {
-    "dart-lang/dart-vim-plugin",
-  },
-  {
-    "mefercs/flutter-snippets-for-neovim",
-  },
-  {
-    "nvim-lua/plenary.nvim",
   },
   {
     "folke/todo-comments.nvim",
