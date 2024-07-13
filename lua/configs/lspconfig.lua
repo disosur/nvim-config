@@ -5,7 +5,7 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
-local servers = { "html", "cssls", "tsserver", "tailwindcss", "eslint", "clangd" }
+local servers = { "tsserver", "tailwindcss", "eslint", "clangd" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -16,19 +16,26 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.gopls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  cmd = { "gopls" },
+lspconfig.rust_analyzer.setup({})
+
+lspconfig.gopls.setup({
   filetypes = { "go", "gomod", "gowork", "gotmpl" },
-  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
   settings = {
-    gopls = {
-      completeUnimported = true,
-      usePlaceholders = true,
-      analyses = {
-        unusedparams = true,
-      },
+    env = {
+      GOEXPERIMENT = "rangefunc",
+    },
+    formatting = {
+      gofumpt = true,
     },
   },
-}
+})
+
+require('lspconfig').tailwindcss.setup({
+  settings = {
+    includeLanguages = {
+      templ = "html",
+      svelte = "html",
+      ["typescriptreact"] = "typescript",
+    },
+  },
+})

@@ -14,6 +14,15 @@ return {
     end,
   },
   {
+    'saecki/crates.nvim',
+    ft = { "rust", "toml" },
+    config = function(_, opts)
+      local crates = require('crates')
+      crates.setup(opts)
+      crates.show()
+    end,
+  },
+  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
@@ -30,6 +39,8 @@ return {
         "gofumpt",
         "goimports-reviser",
         "golines",
+        "rust-analyzer",
+        "rustfmt",
         "clangd",
         "clang-format",
         "templ",
@@ -47,16 +58,11 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
-        "html",
-        "css",
         "javascript",
         "typescript",
         "tsx",
-        "dart",
         "svelte",
         "templ",
-        "vue",
-        "astro",
       },
     },
   },
