@@ -14,9 +14,6 @@ return {
     end,
   },
   {
-    "tpope/vim-fugitive",
-  },
-  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {

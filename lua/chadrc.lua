@@ -6,11 +6,7 @@ local M = {}
 
 M.ui = {
   theme = "material-darker",
-  transparency = true,
-  hl_override = {
-    Comment = { italic = true },
-    ["@comment"] = { italic = true },
-  },
+  transparency = false,
 }
 
 return M
