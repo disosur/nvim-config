@@ -47,7 +47,6 @@ return {
         "goimports-reviser",
         "golines",
         "rust-analyzer",
-        "rustfmt",
         "clangd",
         "clang-format",
         "templ",
@@ -73,11 +72,8 @@ return {
         "templ",
         "rust",
         "zig",
+        "elixir",
       },
     },
-  },
-  {
-    "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
   },
 }
