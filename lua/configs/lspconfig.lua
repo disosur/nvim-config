@@ -5,7 +5,7 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
-local servers = { "tsserver", "tailwindcss", "eslint", "clangd" }
+local servers = { "tsserver", "tailwindcss", "eslint" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -30,12 +30,15 @@ lspconfig.gopls.setup {
   },
 }
 
-require("lspconfig").tailwindcss.setup {
+lspconfig.tailwindcss.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "templ", "astro", "javascript", "typescript", "react" },
   settings = {
-    includeLanguages = {
-      templ = "html",
-      svelte = "html",
-      ["typescriptreact"] = "typescript",
+    tailwindCSS = {
+      includeLanguages = {
+        templ = "html",
+      },
     },
   },
 }
