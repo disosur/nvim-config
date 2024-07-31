@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = "BufWritePre", -- uncomment for format on save
+    event = "BufWritePre",
     config = function()
       require "configs.conform"
     end,
@@ -19,6 +19,15 @@ return {
     config = function()
       require("nvim-ts-autotag").setup()
     end,
+  },
+  {
+    "akinsho/flutter-tools.nvim",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim", -- optional for vim.ui.select
+    },
+    config = true,
   },
   {
     "saecki/crates.nvim",
