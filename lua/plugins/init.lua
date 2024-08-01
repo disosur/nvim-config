@@ -15,7 +15,7 @@ return {
   },
   {
     "windwp/nvim-ts-autotag",
-    ft = { "javascript", "javascriptreact", "typescript", "typescriptreact", "svelte", "templ" },
+    ft = { "javascript", "javascriptreact", "typescript", "typescriptreact", "svelte", "templ", "astro" },
     config = function()
       require("nvim-ts-autotag").setup()
     end,
@@ -28,6 +28,10 @@ return {
       "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
     config = true,
+  },
+  {
+    "fatih/vim-go",
+    lazy = false
   },
   {
     "saecki/crates.nvim",
@@ -78,6 +82,7 @@ return {
         "templ",
         "rust",
         "zig",
+        "astro",
       },
     },
   },
