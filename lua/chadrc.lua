@@ -5,7 +5,7 @@
 local M = {}
 
 M.ui = {
-  theme = "sweetpastel",
+  theme = "rosepine",
   transparency = true,
 }
 

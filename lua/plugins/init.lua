@@ -29,9 +29,10 @@ return {
     },
     config = true,
   },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   {
     "fatih/vim-go",
-    lazy = false
+    lazy = false,
   },
   {
     "saecki/crates.nvim",
