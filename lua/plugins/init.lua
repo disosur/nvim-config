@@ -20,15 +20,6 @@ return {
       require("nvim-ts-autotag").setup()
     end,
   },
-  {
-    "akinsho/flutter-tools.nvim",
-    lazy = false,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "stevearc/dressing.nvim", -- optional for vim.ui.select
-    },
-    config = true,
-  },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   {
     "fatih/vim-go",
